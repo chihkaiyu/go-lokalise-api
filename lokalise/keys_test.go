@@ -289,3 +289,33 @@ func TestClient_Keys_Create(t *testing.T) {
 	assert.Equal(expectedResult.ProjectID, resp.ProjectID, "response project id not as expected")
 	assert.Equal(expectedResult.Keys, resp.Keys, "response keys not as expected")
 }
+
+func TestClient_Keys_Delete(t *testing.T) {
+	inputProjectID := "1"
+	inputKeyID := "1"
+	mockedServerResponseBody := `{
+    "project_id": "3002780358964f9bab5a92.87762498",
+    "key_removed": false,
+	"keys_locked": 1
+}`
+	expectedOutgoingRequest := outgoingRequest{
+		method: http.MethodDelete,
+		path:   "/projects/" + inputProjectID + "/keys/" + inputKeyID,
+	}
+	expectedResult := model.KeysRemoveResponse{
+		ProjectID:  "3002780358964f9bab5a92.87762498",
+		KeyRemoved: false,
+		KeysLocked: 1,
+	}
+	assert := assert.New(t)
+	client, fixture, close := setupClient(t, mockedServerResponseBody)
+	defer close()
+
+	resp, err := client.Keys.Delete(context.Background(), inputProjectID, inputKeyID)
+
+	assert.NoError(err, "output error not expected")
+	expectedOutgoingRequest.Assert(t, fixture)
+	assert.Equal(expectedResult.ProjectID, resp.ProjectID, "response project id not as expected")
+	assert.Equal(expectedResult.KeyRemoved, resp.KeyRemoved, "response key_removed not as expected")
+	assert.Equal(expectedResult.KeysLocked, resp.KeysLocked, "response keys_locked not as expected")
+}
