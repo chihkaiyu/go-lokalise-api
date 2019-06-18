@@ -82,3 +82,12 @@ func (c *KeysService) Create(ctx context.Context, projectID string, keys []model
 	}
 	return res, apiError(resp)
 }
+
+func (c *KeysService) Delete(ctx context.Context, projectID string, keyID string) (model.KeysRemoveResponse, error) {
+	var res model.KeysRemoveResponse
+	resp, err := c.client.delete(ctx, fmt.Sprintf("%s/%s/%s/%s", pathProjects, projectID, pathKeys, keyID), &res)
+	if err != nil {
+		return model.KeysRemoveResponse{}, err
+	}
+	return res, apiError(resp)
+}

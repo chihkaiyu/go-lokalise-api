@@ -44,3 +44,9 @@ type KeysResponse struct {
 	Keys      []Key       `json:"keys,omitempty"`
 	Errors    []ErrorKeys `json:"error,omitempty"`
 }
+
+type KeysRemoveResponse struct {
+	ProjectID  string `json:"project_id,omitempty"`
+	KeyRemoved bool   `json:"key_removed,omitempty"`
+	KeysLocked int    `json:"keys_locked,omitempty"`
+}
