@@ -1,5 +1,5 @@
 [[constraint]]
-  name = "github.com/go-resty/resty"
+  name = "gopkg.in/resty.v1"
   version = "1.9.1"
 
 [prune]

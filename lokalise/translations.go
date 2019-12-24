@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	"github.com/17media/go-lokalise-api/model"
-	"github.com/go-resty/resty"
+	"gopkg.in/resty.v1"
 )
 
 type TranslationsService struct {

@@ -11,7 +11,7 @@
 
 [[projects]]
   digest = "1:00f1b1d722a012f54670ecc09ee92557d7314bfd9152a085ce91933c1c14b026"
-  name = "github.com/go-resty/resty"
+  name = "gopkg.in/resty.v1"
   packages = ["."]
   pruneopts = "NUT"
   revision = "d4920dcf5b7689548a6db640278a9b35a5b48ec6"
@@ -71,7 +71,7 @@
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
-    "github.com/go-resty/resty",
+    "gopkg.in/resty.v1",
     "github.com/stretchr/testify/assert",
   ]
   solver-name = "gps-cdcl"

@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/17media/go-lokalise-api/model"
-	"github.com/go-resty/resty"
+	"gopkg.in/resty.v1"
 )
 
 func TestClient_retryLogic(t *testing.T) {

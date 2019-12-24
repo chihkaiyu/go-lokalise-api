@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/go-resty/resty"
+	"gopkg.in/resty.v1"
 
 	"github.com/17media/go-lokalise-api/model"
 )
