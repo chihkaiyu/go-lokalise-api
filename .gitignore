@@ -1,1 +1,5 @@
-/vendor/
+vendor/*
+!vendor/vendor.json
+.idea/
+.DS_Store
+/coverage.txt
