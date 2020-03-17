@@ -1,4 +1,4 @@
-module github.com/17media/go-lokalise-ap
+module github.com/17media/go-lokalise-api
 
 go 1.13
 
